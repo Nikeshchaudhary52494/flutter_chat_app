@@ -2,11 +2,12 @@ import 'package:chat_app/components/my_button.dart';
 import 'package:chat_app/components/my_textfield.dart';
 import 'package:flutter/material.dart';
 
-class LoginPage extends StatelessWidget {
-  LoginPage({super.key});
+class RegisterationPage extends StatelessWidget {
+  RegisterationPage({super.key});
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
-  void login() {}
+  final confirmPasswordController = TextEditingController();
+  void signin() {}
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,7 +26,7 @@ class LoginPage extends StatelessWidget {
               height: 20,
             ),
             Text(
-              "Welcoome back, again",
+              "create your account",
               style: TextStyle(
                 fontSize: 20,
                 color: Colors.grey[800],
@@ -48,27 +49,33 @@ class LoginPage extends StatelessWidget {
             const SizedBox(
               height: 10,
             ),
+            MyTextfield(
+                controller: confirmPasswordController,
+                hintText: "confirm Password",
+                obsecure: true),
+            const SizedBox(
+              height: 10,
+            ),
             MyButton(
               text: "Sign in",
-              onTap: login,
+              onTap: signin,
             ),
             const SizedBox(
               height: 10,
             ),
             Row(
-              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 const SizedBox(
                   width: 5,
                 ),
-                const Text("Don't have a account"),
+                const Text("already a user"),
                 const SizedBox(
                   width: 5,
                 ),
                 GestureDetector(
                   onTap: () {},
                   child: const Text(
-                    "Register",
+                    "Login",
                     style: TextStyle(color: Colors.lightBlue, fontSize: 16),
                   ),
                 )
